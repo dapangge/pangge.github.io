@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body{
+            /*设置背景图片*/
+            background: url("images/125.jpg");
+            /*设置网页文本居中*/
+            text-align: center;
+            background-size: cover;
+        }
+        h1{
+            /*改这个50可以调整“星语心愿”的垂直位置*/
+            margin: 2.5rem auto;
+            /*“星语心愿”的颜色*/
+            color: #417bb4;
+        }
+        .box {
+            /*显示的文章区域的宽高*/
+            width: 50%;
+            height: 25rem;
+            margin: -1rem auto;
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            top: 0;
+            /*background-color: #fff;*/
+        }
+        p{
+            /*文章字的颜色*/
+            color: aliceblue;
+            /*文章行与行之间的距离*/
+            margin-top: 1.75rem;
+        }
+        .text {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 30rem;
+        }
+    </style>
+</head>
+<body ontouchstart="toggleSound()">
+<!--主题文字-->
+<h1>一些想说的话</h1>
+<div class="box">
+    <div class="text">
+        <!--文章内容，一个p一行-->
+        <p>冠军阵容，</p>
+        <p>成员有；</p>
+        <p>项目经理:祖腾，</p>
+        <p>老板:胖哥</p>
+        <p>总组长:小祥，</p>
+        <p>项目展示，</p>
+        <p>应用:LOL盒子</p>
+        <p>功能:主要是主播视频</p>
+        <p>框架:各种三方</p>
+        <p>亮点: 那就是没有亮点</p>
+        <p>市场价值:不可估量</p>
+        <p>下载量:100000万</p>
+        <p>内容:各种黄播</p>
+        <p>下载:接入的各大平台</p>
+        <p>分享:到处都能分享</p>
+        <p>支付方式:微信;支付宝;联银</p>
+        <p>语言: java,h5,等等</p>
+        <p>虽然不会出现bug,</p>
+        <p>我们也会长期维护的哦! </p>
+        <p>下面说下我们获奖感言</p>
+        <p>感谢锐弟的天天陪伴</p>
+        <p>感谢美女老师梅梅的天天关心</p>
+        <p>感谢兵哥的天天教导</p>
+        <p>感谢敏哥的天天鼓励</p>
+        <p>感谢波波的不放弃不抛弃</p>
+        <p>感谢林哥和军哥的陪伴</p>
+        <p>感谢院长的!!!!!!!!!!!</p>
+        <p>感谢小码哥给我带来家的感觉</p>
+        <p>最后,也是最应该应该感谢的</p>
+        <p>感谢8期的同班同学是你们让我天天开心</p>
+        <p>在这里祝福大家身体健康,万事如意</p>
+        <p>没女朋友的找个女朋友,有女朋友的早日结婚,结婚的早点生个娃!!!!!!</p>
+        <p>最后也是我们来这里的最寸初的梦想,月收入过万,迎娶白富美</p>
+    </div>
+</div>
+<!--背景音乐，src是音乐路径，loop是循环，autoplay是自动播放-->
+<audio src="music/lol.mp3" loop="loop" autoplay="autoplay" id="audio"></audio>
+<script>
+    var text = document.getElementsByClassName('text')[0];
+    //    speed是没此运动的距离，0.05rem
+    var speed = 0.05;
+    //    t是预留的距离，等音乐开始文字正好出现
+    var t = 30;
+    setInterval(function () {
+        t -= speed;
+        text.style.top = t + 'rem';
+        if(t <= -92.5){
+            t = 30
+        }
+        //        下面的30意思是，每30毫秒执行一次
+    },30);
+    function toggleSound() {
+        var music = document.getElementById("audio");//获取ID
+        if (music.paused) { //判读是否播放
+            music.play(); //没有就播放
+        }
+    }
+</script>
+</body>
+</html>
